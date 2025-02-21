@@ -5,7 +5,6 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { default as mainImage} from './images/main.jpg';
 
-
 function App() {
   return (
     <div className="h-screen overflow-y-auto scroll-smooth">
@@ -48,9 +47,6 @@ function App() {
       {/* Section 3 */}
       <section className="h-screen bg-gray-900 flex flex-col">
         <div className="relative py-6">
-          <div className="absolute inset-0 flex items-center justify-center">
-            {/* <div className="h-0.5 w-full bg-purple-500 opacity-20"></div> */}
-          </div>
           <div className="relative flex justify-center">
             <div className="bg-gray-900 px-4 flex items-center gap-3">
               <Camera className="w-8 h-8 text-purple-400" />
@@ -68,34 +64,46 @@ function App() {
         </div>
 
         <div className="flex-1 p-4 flex items-center h-full">
-  <div className="grid grid-cols-3 md:grid-cols-4 gap-3 w-full h-full auto-rows-[1fr]">
-    {images &&
-      Object.values(images)
-        .slice(0, 9)
-        .map((image, index) => {
-          const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
-          return (
-            <motion.div
-              key={index}
-              className="overflow-hidden rounded-lg transition-transform hover:scale-[1.02] aspect-square"
-              ref={ref}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5 }}
-            >
-              {inView && (
-                <img
-                  src={image}
-                  alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              )}
-            </motion.div>
-          );
-        })}
-  </div>
-</div>
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-3 w-full h-full auto-rows-[1fr]">
+            {images &&
+              Object.values(images)
+                .slice(0, 9)
+                .map((image, index) => {
+                  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+                  return (
+                    <motion.div
+                      key={index}
+                      className="overflow-hidden rounded-lg transition-transform hover:scale-[1.02] aspect-square"
+                      ref={ref}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={inView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {inView && (
+                        <img
+                          src={image}
+                          alt={`Gallery image ${index + 1}`}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      )}
+                    </motion.div>
+                  );
+                })}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4 - Final Call to Action */}
+      <section className="h-screen bg-black flex items-center justify-center">
+        <motion.h1
+          className="text-6xl md:text-8xl font-black text-white"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          Be there 🫵
+        </motion.h1>
       </section>
     </div>
   );
