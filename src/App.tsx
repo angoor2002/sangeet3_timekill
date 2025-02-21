@@ -49,7 +49,7 @@ function App() {
       <section className="h-screen bg-gray-900 flex flex-col">
         <div className="relative py-6">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="h-0.5 w-full bg-purple-500 opacity-20"></div>
+            {/* <div className="h-0.5 w-full bg-purple-500 opacity-20"></div> */}
           </div>
           <div className="relative flex justify-center">
             <div className="bg-gray-900 px-4 flex items-center gap-3">
