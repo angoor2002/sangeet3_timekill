@@ -1,0 +1,10 @@
+export { default as image1 } from '../../../images/img_1.jpg';
+export { default as image2 } from '../../../images/img_2.jpg';
+export { default as image3 } from '../../../images/img_3.jpg';
+export { default as image4 } from '../../../images/img_4.jpg';
+// export { default as image5 } from '../../../images/img_5.jpg';
+export { default as image6 } from '../../../images/img_6.jpg';
+export { default as image7 } from '../../../images/img_7.jpg';
+export { default as image8 } from '../../../images/img_8.jpg';
+export { default as image9 } from '../../../images/img_9.jpg';
+// export { default as mainImage } from '../../../images/main.jpg';
